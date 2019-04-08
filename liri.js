@@ -1,7 +1,9 @@
 require("dotenv").config();
-var keys = require("./keys.js");
-var spotify = new Spotify(keys.spotify);
-var axios = require("axios");
+const keys = require("./keys.js");
+const Spotify = require("node-spotify-api");
+const spotify = new Spotify(keys.spotify);
+const moment = require("moment");   
+const axios = require("axios");
 
 // ============================================
 
@@ -37,7 +39,7 @@ function App(command, params) {
 // ============================================================
 
 function getConcerts(params) {
-    const queryURL = "https://rest.bandsintown.com/artist" + params + "/events?app_id=codingbootcamp";
+    const queryURL = "https://rest.bandsintown.com/artists/" + params + "/events?app_id=codingbootcamp";
 
     axios.get(queryURL)
         .then(function (response) {
@@ -52,4 +54,23 @@ function getConcerts(params) {
             if (err) throw err;
         })
 
-}
+};
+
+function getMySong(params) {
+    
+    spotify.search({ type: 'track', query: params }, function(err, data) {
+        if (err) throw err;
+      
+        // console.log(JSON.stringify(data.tracks.items[0].name,null, 2)); 
+        console.log(data.tracks.items[0].name); 
+        for (let i = 0; i < data.tracks.items.length; i++) {
+            var song = data.tracks.items[i];
+            console.log("artist(s): ",song.artists[0].name);
+            console.log("Song Name: ", song.name);
+            console.log("Song Preview: ",song.preview_url);
+            console.log("Songs Album Name: ", song.album.name);
+            console.log("-----------------------------------------------");
+            
+        }
+      });
+};
