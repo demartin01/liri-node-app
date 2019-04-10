@@ -4,7 +4,6 @@ const Spotify = require("node-spotify-api");
 const spotify = new Spotify(keys.spotify);
 const moment = require("moment");   
 const axios = require("axios");
-const fs = require('fs');
 
 // ============================================
 
