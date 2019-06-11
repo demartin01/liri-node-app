@@ -74,3 +74,23 @@ function getMySong(params) {
         }
       });
 };
+
+function getMyMovie (movie) {
+    if (movie===undefined || movie ===" ") {
+        movie = "Mr. Nobody"
+    };
+    const queryURL = "http:omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
+    axios.get(queryURL)
+        .then(function (response) {
+
+			console.log("Title: " + response.data.Title);
+			console.log("Year: " + response.data.Year);
+			console.log("IMDB Rating: " + response.data.imdbRating);
+			//console.log("Country: " + jsonData.Country);
+			//console.log("Language: " + jsonData.Language);
+			//console.log("Plot: " + jsonData.Plot);
+            //console.log("Actors: " + jsonData.Actors);
+            //console.log("-------------------------------------------------");
+        }
+	)
+    };
