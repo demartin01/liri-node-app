@@ -4,6 +4,7 @@ const Spotify = require("node-spotify-api");
 const spotify = new Spotify(keys.spotify);
 const moment = require("moment");   
 const axios = require("axios");
+const fs = require("fs");
 
 // ============================================
 
@@ -75,22 +76,39 @@ function getMySong(params) {
       });
 };
 
-function getMyMovie (movie) {
+function getMyMovie(movie) {
     if (movie===undefined || movie ===" ") {
         movie = "Mr. Nobody"
     };
-    const queryURL = "http:omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
+    const queryURL = "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
     axios.get(queryURL)
         .then(function (response) {
 
 			console.log("Title: " + response.data.Title);
 			console.log("Year: " + response.data.Year);
+			console.log("Rated: " + response.data.Rated);
 			console.log("IMDB Rating: " + response.data.imdbRating);
-			//console.log("Country: " + jsonData.Country);
-			//console.log("Language: " + jsonData.Language);
-			//console.log("Plot: " + jsonData.Plot);
-            //console.log("Actors: " + jsonData.Actors);
-            //console.log("-------------------------------------------------");
+			console.log("Country: " + response.data.Country);
+			console.log("Language: " + response.data.Language);
+			console.log("Plot: " + response.data.Plot);
+            console.log("Actors: " + response.data.Actors);
+            console.log("-------------------------------------------------");
         }
 	)
     };
+
+    function doIt(){
+      let commands;
+      let params;
+      
+      fs.readFile("random.txt", "utf8", function (error, data) {
+          if (error) throw error;
+          const dataArray = data.split(",");
+          for (let i = 0; i < dataArray.length; i++) {
+              commands = dataArray[i];
+              i++;
+              params = dataArray[i];
+              App(commands, params);
+          }
+      })
+    }
