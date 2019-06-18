@@ -21,7 +21,8 @@ Name of the venue
 Venue location
 Date of the Event (use moment to format this as "MM/DD/YYYY")
 
-<img src="concert-this.png">
+
+![alt text](/assets/images/concert-this.PNG)
 
 --------------------------------------
 node liri.js spotify-this-song '<song name here>'
@@ -33,7 +34,7 @@ The song's name
 A preview link of the song from Spotify
 The album that the song is from
 
-![](/assets/images/spotify-this-song.png)
+![alt text](/assets/images/spotify-this-song.PNG)
 
 --------------------------------------
 node liri.js movie-this '<movie name here>'
@@ -51,14 +52,14 @@ This will output the following information to your terminal/bash window:
 
 If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody
 
-![](./assets/images/movie-this.png)
+![alt text](./assets/images/movie-this.PNG)
 
 ----------------------------------------
 node liri.js do-what-it-says
 
 Using the fs Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
 
-![](./assets/images/do-what-it-says.png)
+![](./assets/images/do-what-it-says.PNG)
 
 -----------------------------------------
 1. Vanderbilt University Coding Bootcamp 
