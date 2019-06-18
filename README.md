@@ -50,9 +50,14 @@ This will output the following information to your terminal/bash window:
    * Plot of the movie.
    * Actors in the movie.
 
-If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody
+
 
 ![alt text](./assets/images/movie-this.PNG)
+
+If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody
+
+![alt text](.assets/images/movie-this-mrnobody.PNG)
+
 
 ----------------------------------------
 node liri.js do-what-it-says
