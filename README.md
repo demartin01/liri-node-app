@@ -56,8 +56,7 @@ This will output the following information to your terminal/bash window:
 
 If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody
 
-![alt text](.assets/images/movie-this-nobody.PNG)
-
+![alt text](./assets/images/movie-this-nobody.PNG)
 
 ----------------------------------------
 node liri.js do-what-it-says
