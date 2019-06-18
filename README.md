@@ -21,7 +21,7 @@ Name of the venue
 Venue location
 Date of the Event (use moment to format this as "MM/DD/YYYY")
 
-![](./assets/images/concert-this.png)
+<img src="concert-this.png">
 
 --------------------------------------
 node liri.js spotify-this-song '<song name here>'
@@ -33,7 +33,7 @@ The song's name
 A preview link of the song from Spotify
 The album that the song is from
 
-![](./assets/images/spotify-this-song.png)
+![](/assets/images/spotify-this-song.png)
 
 --------------------------------------
 node liri.js movie-this '<movie name here>'
@@ -60,6 +60,7 @@ Using the fs Node package, LIRI will take the text inside of random.txt and then
 
 ![](./assets/images/do-what-it-says.png)
 
+-----------------------------------------
 1. Vanderbilt University Coding Bootcamp 
 2. Contributor: demartin01
 3. **Built with:** Node Js, Javascript 
